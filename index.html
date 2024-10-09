@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALL</title>
+</head>
+<body>
+    <style>
+        html{
+            transition: smooth;
+        }
+    </style>
+    <div id="ball" style="
+        background-color: rgb(65, 163, 202);
+        top: 0px;
+        left: 0px;
+        border-radius: 50%;    
+        position: absolute;
+        z-index: 5;
+        height: 150px;
+        width: 150px;
+    ">
+    </div>
+    <script>
+        var position=0
+        var velocity=3
+        var moveleft=2
+        function movingBall(){
+            position+=moveleft*velocity
+            var ball=document.getElementById("ball")
+            if(position>=90 || position<=0){
+                moveleft*=-1
+            }
+            ball.style.top=position+'%'
+            ball.style.left=position+'%'
+        }
+        setInterval(movingBall,200)
+    </script>
+</body>
+</html>
